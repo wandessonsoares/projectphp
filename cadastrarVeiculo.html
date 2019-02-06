@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sistema de Locação</title>
+    </head>
+    <body>
+        <h1>Cadastrar Veículo</h1>
+        <form action="cadastraVeiculo.php" method="POST">
+            Nome: <input type="text" name="nome"><br>
+            Marca: <input type="text" name="marca"><br>
+            Modelo: <input type="text" name="modelo"><br>
+            Tipo: 
+                <select name="tipo">
+                <option value="1">Carro</option>
+                <option value="2">Moto</option>
+                </select><br>
+            Potência: <input type="text" name="potencia"><br>
+            Cilindradas: <input type="text" name="cilindradas"><br>    
+                
+            <input type="submit" value="Cadastrar"><br><br>
+            <a href="index.html">Inicio</a>
+        </form>
+    </body>
+</html>
