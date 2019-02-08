@@ -42,7 +42,7 @@
             if ($usuarios){
 
                 foreach($usuarios as $usuario)
-                    echo "<tr>"
+                    echo "<tr>" 
                         . '<th>' . $usuario['id'] . '</th>'  
                         . '<th>' . $usuario['nome'] . '</th>' 
                         . '<th>' . $usuario['matricula'] . '</th>'

@@ -7,10 +7,9 @@
     $modelo = $_POST['modelo'];
     $tipo = $_POST['tipo'];
     $potencia = $_POST['potencia'];
-    $cilindradas = $_POST['cilindradas'];
 
-    $conn->exec("insert into veiculo (nome, marca, modelo, tipo, potencia, cilindradas) 
-                 values ('$nome', '$marca', '$modelo', '$tipo', '$potencia', '$cilindradas')");
+    $conn->exec("insert into veiculo (nome, marca, modelo, tipo, potencia) 
+                 values ('$nome', '$marca', '$modelo', '$tipo', '$potencia')");
 
     $conn = null;
 
