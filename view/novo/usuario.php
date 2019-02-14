@@ -21,7 +21,7 @@
         </div>
         
         <h3>Cadastrar Usuário</h3>
-        <form class="form-horizontal" action="../../controller/cadastraUsuario.php" method="POST">
+        <form class="form-horizontal" action="../../controller/cadastrar/cadastraUsuario.php" method="POST">
             <div class="control-group">
                 <label class="control-label">Nome</label>
                 <div class="controls">

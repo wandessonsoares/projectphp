@@ -45,7 +45,7 @@
                         . '<th>' . $u['id'] . '</th>'  
                         . '<th>' . $u['nome'] . '</th>' 
                         . '<th>' . $u['matricula'] . '</th>'
-                        . '<th>' . '<a class="btn btn-mini" href="excluifamosos.php?id=' . $u['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
+                        . '<th>' . '<a class="btn btn-mini" href="../controller/excluir/excluiUsuario.php?id=' . $u['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
                         . "</tr>";
 
                 echo "</table>";

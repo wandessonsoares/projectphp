@@ -45,7 +45,7 @@
                         . '<th>' . $l['id'] . '</th>'  
                         . '<th>' . $l['nome'] . '</th>' 
                         . '<th>' . $l['cpf'] . '</th>'
-                        . '<th>' . '<a class="btn btn-mini" href="excluifamosos.php?id=' . $l['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
+                        . '<th>' . '<a class="btn btn-mini" href="../controller/excluir/excluiLocatario.php?id=' . $l['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
                         . "</tr>";
 
                 echo "</table>";

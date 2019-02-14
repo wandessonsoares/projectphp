@@ -74,6 +74,13 @@
                                     '$this->tipo', '$this->potencia')");
             $conexao->finalizaConexao();
         }
+
+        public function excluiVeiculo($id){
+            $conexao = new Conexao();
+            $con = $conexao->getConexao();
+            $con->exec("delete from veiculo where id =". $id);
+            $conexao->finalizaConexao();
+        }
     }
 
 ?>

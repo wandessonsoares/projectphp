@@ -43,6 +43,23 @@
 
             return $pessoas;
         }
+
+        public function obtemPessoa($id, $tipo){
+            $conexao = new Conexao();
+            $con = $conexao->getConexao();
+            $pessoa = $con->query("select id, nome, cpf, matricula 
+                                    from pessoa where tipo='$tipo' and id='$id'");
+            $conexao->finalizaConexao();
+
+            return $pessoa;
+        }
+
+        public function excluiPessoa($id){
+            $conexao = new Conexao();
+            $con = $conexao->getConexao();
+            $con->exec("delete from pessoa where id =". $id);
+            $conexao->finalizaConexao();
+        }
     }
 
 ?>

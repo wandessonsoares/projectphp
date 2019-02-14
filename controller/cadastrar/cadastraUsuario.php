@@ -1,6 +1,6 @@
 <?php
 
-    require_once("../model/Usuario.php");
+    require_once("../../model/Usuario.php");
 
     $nome = $_POST['nome'];
     $matricula = $_POST['matricula'];
@@ -9,5 +9,5 @@
 
     $usuario->salvaUsuario();
 
-    HEADER("LOCATION:../view/usuarios.php");
+    HEADER("LOCATION:../../view/usuarios.php");
 ?>

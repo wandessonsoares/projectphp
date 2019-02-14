@@ -25,5 +25,9 @@
         public function obtemUsuarios(){
             return $usuarios = $this->obtemPessoas(1);
         }
+
+        public function obtemUsuario($id){
+            return $usuario = $this->obtemPessoas($id, 1);
+        }
     }
 ?>

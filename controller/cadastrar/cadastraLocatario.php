@@ -1,6 +1,6 @@
 <?php
 
-    require_once("../model/Locatario.php");
+    require_once("../../model/Locatario.php");
 
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
@@ -9,5 +9,5 @@
 
     $locatario->salvaLocatario();
 
-    HEADER("LOCATION:../view/locatarios.php");
+    HEADER("LOCATION:../../view/locatarios.php");
 ?>

@@ -51,7 +51,7 @@
                         . '<th>' . $v['modelo'] . '</th>'
                         . '<th>' . $v['tipo'] . '</th>'
                         . '<th>' . $v['potencia'] . '</th>'
-                        . '<th>' . '<a class="btn btn-mini" href="excluifamosos.php?id=' . $v['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
+                        . '<th>' . '<a class="btn btn-mini" href="../controller/excluir/excluiVeiculo.php?id=' . $v['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
                         . "</tr>";
 
                 echo "</table>";

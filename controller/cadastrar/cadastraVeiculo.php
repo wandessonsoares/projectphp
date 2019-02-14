@@ -1,6 +1,6 @@
 <?php
 
-    require_once("../model/Veiculo.php");
+    require_once("../../model/Veiculo.php");
 
     $nome = $_POST['nome'];
     $marca = $_POST['marca'];
@@ -12,5 +12,5 @@
 
     $veiculo->salvaVeiculo();
 
-    HEADER("LOCATION:../view/veiculos.php");
+    HEADER("LOCATION:../../view/veiculos.php");
 ?>
