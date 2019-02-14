@@ -21,18 +21,20 @@
             </div>
         </div>
 
-        <div class="hero-unit">
-            <h1>Bem-vindo!</h1>
-            <p>Nosso sistema foi criado para facilitar o controle de locadoras de veículo.
-               Com ele você pode cadastrar os seus atendentes, clientes e veículos de forma simples e eficiente.
-               Além disso, você pode verificar os contratos que estão em vigor ou estão próximos de acabar.
-               Todas as informações necessárias para o seu dia-a-dia estão ao alcance de um clique.
-            </p>
-            <p>
-                <a class="btn btn-primary btn-large">
-                Aprenda mais
-                </a>
-            </p>
+        <div class="container">
+            <div class="hero-unit">
+                <h2>Bem-vindo!</h2>
+                <p>Nosso sistema foi criado para facilitar o controle de locadoras de veículo.
+                Com ele você pode cadastrar os seus atendentes, clientes e veículos de forma simples e eficiente.
+                Além disso, você pode verificar os contratos que estão em vigor ou estão próximos de acabar.
+                Todas as informações necessárias para o seu dia-a-dia estão ao alcance de um clique.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large">
+                    Aprenda mais
+                    </a>
+                </p>
+            </div>
         </div>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>

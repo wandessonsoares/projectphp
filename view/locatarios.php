@@ -21,37 +21,43 @@
             </div>
         </div>
 
-        <a class="btn" href="novo/locatario.php"><i class="fas fa-plus"></i>Novo</a><br><br>
+        <div class="container">
 
-        <table class="table table-hover">
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>CPF</th> 
-                <th></th>
-            </tr>
+            <a class="btn" href="novo/locatario.php"><i class="fas fa-plus"></i> Novo</a><br><br>
 
-        <?php
+            <table class="table table-hover">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>CPF</th> 
+                    <th></th>
+                </tr>
 
-            require_once("../model/Locatario.php");
+            <?php
 
-            $locatario = new Locatario();
-            $locatarios = $locatario->obtemLocatarios();
+                require_once("../model/Locatario.php");
 
-            if ($locatarios){
+                $locatario = new Locatario();
+                $locatarios = $locatario->obtemLocatarios();
 
-                foreach($locatarios as $l)
-                    echo "<tr>"
-                        . '<th>' . $l['id'] . '</th>'  
-                        . '<th>' . $l['nome'] . '</th>' 
-                        . '<th>' . $l['cpf'] . '</th>'
-                        . '<th>' . '<a class="btn btn-mini" href="../controller/excluir/excluiLocatario.php?id=' . $l['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
-                        . "</tr>";
+                if ($locatarios){
 
-                echo "</table>";
-            }
+                    foreach($locatarios as $l)
+                        echo "<tr>"
+                            . '<th>' . $l['id'] . '</th>'  
+                            . '<th>' . $l['nome'] . '</th>' 
+                            . '<th>' . $l['cpf'] . '</th>'
+                            . '<th>' .
+                                '<a class="btn btn-mini" href="../controller/obter/obtemLocatario.php?id=' . $l['id'] . '"><i class="fas fa-edit"></i> Editar</a>' . ' ' .
+                                '<a class="btn btn-mini" href="../controller/excluir/excluiLocatario.php?id=' . $l['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>'
+                            . '</th>'
+                            . "</tr>";
 
-        ?>
+                    echo "</table>";
+                }
+
+            ?>
+        </div>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>

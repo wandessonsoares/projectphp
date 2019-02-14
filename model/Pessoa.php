@@ -60,6 +60,15 @@
             $con->exec("delete from pessoa where id =". $id);
             $conexao->finalizaConexao();
         }
+
+        public function atualizaPessoa($id, $nome, $cpf, $matricula){
+            $conexao = new Conexao();
+            $con = $conexao->getConexao();
+            $con->exec("update pessoa set 
+                        nome = '".$nome."', cpf = '".$cpf."', matricula = '".$matricula."'
+                        where id = ".$id);
+            $conexao->finalizaConexao();
+        }
     }
 
 ?>

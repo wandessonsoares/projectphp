@@ -19,45 +19,54 @@
                 </ul>
             </div>
         </div>
-        
+
+        <?php 
+
+            require_once("../../model/Veiculo.php");
+
+            session_start();
+            $veiculo = $_SESSION['veiculo'];
+        ?>
+
         <div class="container">
-            <form class="form-horizontal" action="../../controller/cadastrar/cadastraVeiculo.php" method="POST">
+        
+            <form class="form-horizontal" action="../../controller/editar/editaVeiculo.php" method="POST">
                 <div class="control-group">
                     <div class="controls">
-                    <h3>Cadastrar Veículo</h3>
+                        <h3>Editar Veículo</h3>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Nome</label>
                     <div class="controls">
-                    <input type="text" name="nome">
+                    <input type="text" name="nome" value="<?php echo $veiculo->getNome(); ?>">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Marca</label>
                     <div class="controls">
-                    <input type="text" name="marca">
+                    <input type="text" name="marca" value="<?php echo $veiculo->getMarca(); ?>">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Modelo</label>
                     <div class="controls">
-                    <input type="text" name="modelo">
+                    <input type="text" name="modelo" value="<?php echo $veiculo->getModelo(); ?>">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Tipo</label>
                     <div class="controls">
                         <select name="tipo">
-                            <option value="1">Carro</option>
-                            <option value="2">Moto</option>
+                            <option value="1" <?php if ($veiculo->getTipo() == '1') echo 'selected'; ?> >Carro</option>
+                            <option value="2" <?php if ($veiculo->getTipo() == '2') echo 'selected'; ?> >Moto</option>
                         </select>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Potência</label>
                     <div class="controls">
-                    <input type="text" name="potencia">
+                    <input type="text" name="potencia" value="<?php echo $veiculo->getPotencia(); ?>">
                     </div>
                 </div>
                 <div class="control-group">

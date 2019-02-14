@@ -27,7 +27,13 @@
         }
 
         public function obtemUsuario($id){
-            return $usuario = $this->obtemPessoas($id, 1);
+            $usuario = $this->obtemPessoa($id, 1);
+
+            return $usuario->fetch();
+        }
+
+        public function atualizaUsuario($id, $nome, $matricula){
+            $this->atualizaPessoa($id, $nome, '', $matricula, 1);
         }
     }
 ?>

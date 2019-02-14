@@ -19,24 +19,33 @@
                 </ul>
             </div>
         </div>
+
+        <?php 
+
+            require_once("../../model/Locatario.php");
+
+            session_start();
+            $locatario = $_SESSION['locatario'];
+        ?>
         
         <div class="container">
-            <form class="form-horizontal" action="../../controller/cadastrar/cadastraLocatario.php" method="POST">
+            
+            <form class="form-horizontal" action="../../controller/editar/editaLocatario.php" method="POST">
                 <div class="control-group">
                     <div class="controls">
-                    <h3>Cadastrar Locatário</h3>
+                    <h3>Editar Locatário</h3>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Nome</label>
                     <div class="controls">
-                    <input type="text" name="nome">
+                    <input type="text" name="nome" value="<?php echo $locatario->getNome(); ?>">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">CPF</label>
                     <div class="controls">
-                    <input type="text" name="cpf">
+                    <input type="text" name="cpf" value="<?php echo $locatario->getCpf(); ?>">
                     </div>
                 </div>
                 <div class="control-group">

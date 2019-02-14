@@ -3,6 +3,7 @@
     require_once("Conexao.php");
 
     class Veiculo {
+        protected $id;
         protected $nome;
         protected $marca;
         protected $modelo;
@@ -15,6 +16,14 @@
             $this->modelo = $modelo;
             $this->tipo = $tipo;
             $this->potencia = $potencia;
+        }
+
+        public function getId(){
+            return $this->id;
+        }
+
+        public function setId($id){
+            $this->id = $id;
         }
 
         public function getNome(){
@@ -80,6 +89,25 @@
             $con = $conexao->getConexao();
             $con->exec("delete from veiculo where id =". $id);
             $conexao->finalizaConexao();
+        }
+
+        public function atualizaVeiculo($id, $nome, $marca, $modelo, $tipo, $potencia){
+            $conexao = new Conexao();
+            $con = $conexao->getConexao();
+            $con->exec("update veiculo set 
+                        nome = '".$nome."', marca = '".$marca."', modelo = '".$modelo."', tipo = '".$tipo."', potencia = '".$potencia."'
+                        where id = ".$id);
+            $conexao->finalizaConexao();
+        }
+
+        public function obtemVeiculo($id){
+            $conexao = new Conexao();
+            $con = $conexao->getConexao();
+            $veiculo = $con->query("select id, nome, marca, modelo, tipo, potencia 
+                                    from veiculo where id='$id'");
+            $conexao->finalizaConexao();
+
+            return $veiculo->fetch();
         }
     }
 

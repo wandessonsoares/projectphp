@@ -20,29 +20,37 @@
             </div>
         </div>
         
+        <?php 
+
+            require_once("../../model/Usuario.php");
+            
+            session_start();
+            $usuario = $_SESSION['usuario'];
+        ?>
+
         <div class="container">
-            <form class="form-horizontal" action="../../controller/cadastrar/cadastraLocatario.php" method="POST">
+            <form class="form-horizontal" action="../../controller/editar/editaUsuario.php" method="POST">
                 <div class="control-group">
                     <div class="controls">
-                    <h3>Cadastrar Locatário</h3>
+                    <h3>Editar Usuário</h3>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Nome</label>
                     <div class="controls">
-                    <input type="text" name="nome">
+                    <input type="text" name="nome" value="<?php echo $usuario->getNome(); ?>">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label">CPF</label>
+                    <label class="control-label">Matrícula</label>
                     <div class="controls">
-                    <input type="text" name="cpf">
+                    <input type="text" name="matricula" value="<?php echo $usuario->getMatricula(); ?>">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="controls">
                     <button type="submit" class="btn btn-primary">Salvar</button>
-                    <a class="btn btn-primary" href="../locatarios.php">Cancelar</a>
+                    <a class="btn btn-primary" href="../usuarios.php">Cancelar</a>
                     </div>
                 </div>
             </form>

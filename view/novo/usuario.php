@@ -20,25 +20,34 @@
             </div>
         </div>
         
-        <h3>Cadastrar Usuário</h3>
-        <form class="form-horizontal" action="../../controller/cadastrar/cadastraUsuario.php" method="POST">
-            <div class="control-group">
-                <label class="control-label">Nome</label>
-                <div class="controls">
-                <input type="text" name="nome">
+        <div class="container">
+            
+            <form class="form-horizontal" action="../../controller/cadastrar/cadastraUsuario.php" method="POST">
+                <div class="control-group">
+                    <div class="controls">
+                    <h3>Cadastrar Usuário</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">Matrícula</label>
-                <div class="controls">
-                <input type="text" name="matricula">
+                <div class="control-group">
+                    <label class="control-label">Nome</label>
+                    <div class="controls">
+                    <input type="text" name="nome">
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-                <a class="btn btn-primary" href="../usuarios.php">Cancelar</a>
-            </div>
-        </form>
+                <div class="control-group">
+                    <label class="control-label">Matrícula</label>
+                    <div class="controls">
+                    <input type="text" name="matricula">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a class="btn btn-primary" href="../usuarios.php">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>

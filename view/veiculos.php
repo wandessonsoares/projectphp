@@ -9,7 +9,7 @@
     </head>
     <body>
     <div class="navbar">
-            <div class="navbar-inner">
+        <div class="navbar-inner">
                 <a class="brand" href="#"><i class="fas fa-car"></i> Sistema de Locação de Veículos</a>
                 <ul class="nav">
                 <li><a href="../index.php">Home</a></li>
@@ -21,43 +21,48 @@
             </div>
         </div>
 
-        <a class="btn" href="novo/veiculo.php"><i class="fas fa-plus"></i> Novo</a><br><br>
+        <div class="container">
+            <a class="btn" href="novo/veiculo.php"><i class="fas fa-plus"></i> Novo</a><br><br>
 
-        <table class="table table-hover">
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Marca</th>
-                <th>Modelo</th> 
-                <th>Tipo</th>
-                <th>Potência</th>
-                <th></th>
-            </tr>
+            <table class="table table-hover">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Modelo</th> 
+                    <th>Tipo</th>
+                    <th>Potência</th>
+                    <th></th>
+                </tr>
 
-        <?php
+            <?php
 
-            require_once("../model/Veiculo.php");
+                require_once("../model/Veiculo.php");
 
-            $veiculo = new Veiculo();
-            $veiculos = $veiculo->obtemVeiculos();
+                $veiculo = new Veiculo();
+                $veiculos = $veiculo->obtemVeiculos();
 
-            if ($veiculos){
+                if ($veiculos){
 
-                foreach($veiculos as $v)
-                    echo "<tr>"
-                        . '<th>' . $v['id'] . '</th>'  
-                        . '<th>' . $v['nome'] . '</th>' 
-                        . '<th>' . $v['marca'] . '</th>'
-                        . '<th>' . $v['modelo'] . '</th>'
-                        . '<th>' . $v['tipo'] . '</th>'
-                        . '<th>' . $v['potencia'] . '</th>'
-                        . '<th>' . '<a class="btn btn-mini" href="../controller/excluir/excluiVeiculo.php?id=' . $v['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
-                        . "</tr>";
+                    foreach($veiculos as $v)
+                        echo "<tr>"
+                            . '<th>' . $v['id'] . '</th>'  
+                            . '<th>' . $v['nome'] . '</th>' 
+                            . '<th>' . $v['marca'] . '</th>'
+                            . '<th>' . $v['modelo'] . '</th>'
+                            . '<th>' . $v['tipo'] . '</th>'
+                            . '<th>' . $v['potencia'] . '</th>'
+                            . '<th>' . 
+                                '<a class="btn btn-mini" href="../controller/obter/obtemVeiculo.php?id=' . $v['id'] . '"><i class="fas fa-edit"></i> Editar</a>' . ' ' . 
+                                '<a class="btn btn-mini" href="../controller/excluir/excluiVeiculo.php?id=' . $v['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a>'
+                            . '</th>'
+                            . "</tr>";
 
-                echo "</table>";
-            }
+                    echo "</table>";
+                }
 
-        ?>
+            ?>
+        </div>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>

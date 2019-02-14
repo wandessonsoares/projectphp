@@ -21,37 +21,43 @@
             </div>
         </div>
 
-        <a class="btn" href="novo/usuario.php"><i class="fas fa-plus"></i> Novo</a><br><br>
 
-        <table class="table table-hover">
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Matrícula</th> 
-                <th></th>
-            </tr>
+        <div class="container">        
+            <a class="btn" href="novo/usuario.php"><i class="fas fa-plus"></i> Novo</a><br><br>
 
-        <?php
+            <table class="table table-hover">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Matrícula</th> 
+                    <th></th>
+                </tr>
 
-            require_once("../model/Usuario.php");
+            <?php
 
-            $usuario = new Usuario();
-            $usuarios = $usuario->obtemUsuarios();
+                require_once("../model/Usuario.php");
 
-            if ($usuarios){
+                $usuario = new Usuario();
+                $usuarios = $usuario->obtemUsuarios();
 
-                foreach($usuarios as $u)
-                    echo "<tr>" 
-                        . '<th>' . $u['id'] . '</th>'  
-                        . '<th>' . $u['nome'] . '</th>' 
-                        . '<th>' . $u['matricula'] . '</th>'
-                        . '<th>' . '<a class="btn btn-mini" href="../controller/excluir/excluiUsuario.php?id=' . $u['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
-                        . "</tr>";
+                if ($usuarios){
 
-                echo "</table>";
-            }
+                    foreach($usuarios as $u)
+                        echo "<tr>" 
+                            . '<th>' . $u['id'] . '</th>'  
+                            . '<th>' . $u['nome'] . '</th>' 
+                            . '<th>' . $u['matricula'] . '</th>'
+                            . '<th>' . 
+                                '<a class="btn btn-mini" href="../controller/obter/obtemUsuario.php?id=' . $u['id'] . '"><i class="fas fa-edit"></i> Editar</a>' . ' ' .
+                                '<a class="btn btn-mini" href="../controller/excluir/excluiUsuario.php?id=' . $u['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a>' 
+                            . '</th>'
+                            . "</tr>";
 
-        ?>
+                    echo "</table>";
+                }
+
+            ?>
+        </div>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
