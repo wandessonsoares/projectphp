@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Sistema de Locação</title>
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </head>
     <body>
@@ -21,7 +21,7 @@
         </div>
         
         <h3>Cadastrar Veículo</h3>
-        <form class="form-horizontal" action="cadastraVeiculo.php" method="POST">
+        <form class="form-horizontal" action="../../controller/cadastraVeiculo.php" method="POST">
             <div class="control-group">
                 <label class="control-label">Nome</label>
                 <div class="controls">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label">Nome</label>
+                <label class="control-label">Tipo</label>
                 <div class="controls">
                     <select name="tipo">
                         <option value="1">Carro</option>
@@ -57,7 +57,7 @@
             </div>
             <div class="control-group">
                 <button type="submit" class="btn btn-primary">Salvar</button>
-                <a class="btn btn-primary" href="visualizaVeiculos.php">Cancelar</a>
+                <a class="btn btn-primary" href="../veiculos.php">Cancelar</a>
             </div>
         </form>
 

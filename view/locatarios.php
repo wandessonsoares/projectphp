@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Sistema de Locação</title>
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     </head>
@@ -12,16 +12,16 @@
             <div class="navbar-inner">
                 <a class="brand" href="#"><i class="fas fa-car"></i> Sistema de Locação de Veículos</a>
                 <ul class="nav">
-                <li><a href="index.php">Home</a></li>
-                <li><a href=visualizaLocatarios.php>Usuários</a></li>
-                <li><a href=visualizaLocatarios.php>Locatários</a></li>
-                <li><a href=visualizaContratos.php>Contrato</a></li>
-                <li><a href=visualizaVeiculos.php>Veículos</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href=usuarios.php>Usuários</a></li>
+                <li><a href=locatarios.php>Locatários</a></li>
+                <li><a href=contratos.php>Contrato</a></li>
+                <li><a href=veiculos.php>Veículos</a></li>
                 </ul>
             </div>
         </div>
 
-        <a class="btn" href="cadastrarLocatario.html"><i class="fas fa-plus"></i> Novo</a><br><br>
+        <a class="btn" href="novo/locatario.php"><i class="fas fa-plus"></i>Novo</a><br><br>
 
         <table class="table table-hover">
             <tr>
@@ -33,26 +33,23 @@
 
         <?php
 
-            require_once("classes/Conexao.php");
+            require_once("../model/Locatario.php");
 
-            $conexao = new Conexao;
-            $con = $conexao->getConexao();
-            $locatarios = $con->query("select id, nome, cpf from usuario where tipo=2");
+            $locatario = new Locatario();
+            $locatarios = $locatario->obtemLocatarios();
 
             if ($locatarios){
 
-                foreach($locatarios as $locatario)
+                foreach($locatarios as $l)
                     echo "<tr>"
-                        . '<th>' . $locatario['id'] . '</th>'  
-                        . '<th>' . $locatario['nome'] . '</th>' 
-                        . '<th>' . $locatario['cpf'] . '</th>'
-                        . '<th>' . '<a class="btn btn-mini" href="excluifamosos.php?id=' . $locatario['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
+                        . '<th>' . $l['id'] . '</th>'  
+                        . '<th>' . $l['nome'] . '</th>' 
+                        . '<th>' . $l['cpf'] . '</th>'
+                        . '<th>' . '<a class="btn btn-mini" href="excluifamosos.php?id=' . $l['id'] . '"><i class="fas fa-trash-alt"></i> Excluir</a><br>' . '</th>'
                         . "</tr>";
 
                 echo "</table>";
             }
-
-            $conexao->finalizaConexao();
 
         ?>
 

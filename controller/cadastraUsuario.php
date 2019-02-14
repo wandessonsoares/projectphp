@@ -1,15 +1,13 @@
 <?php
 
-    $conn = new PDO('mysql:host=localhost;dbname=projeto', 'root', '');
+    require_once("../model/Usuario.php");
 
     $nome = $_POST['nome'];
     $matricula = $_POST['matricula'];
 
-    $conn->exec("insert into usuario (nome, matricula, cpf, tipo) 
-                 values ('$nome', '$matricula', '', 1)");
+    $usuario = new Usuario($matricula, $nome);
 
-    $conn = null;
+    $usuario->salvaUsuario();
 
-    HEADER("LOCATION:visualizaUsuarios.php");
-
+    HEADER("LOCATION:../view/usuarios.php");
 ?>

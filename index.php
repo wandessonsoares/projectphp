@@ -13,10 +13,10 @@
                 <a class="brand" href="#"><i class="fas fa-car"></i> Sistema de Locação de Veículos</a>
                 <ul class="nav">
                 <li><a href="index.php">Home</a></li>
-                <li><a href=visualizaUsuarios.php>Usuários</a></li>
-                <li><a href=visualizaLocatarios.php>Locatários</a></li>
-                <li><a href=visualizaContratos.php>Contrato</a></li>
-                <li><a href=visualizaVeiculos.php>Veículos</a></li>
+                <li><a href=view/usuarios.php>Usuários</a></li>
+                <li><a href=view/locatarios.php>Locatários</a></li>
+                <li><a href=view/contratos.php>Contrato</a></li>
+                <li><a href=view/veiculos.php>Veículos</a></li>
                 </ul>
             </div>
         </div>

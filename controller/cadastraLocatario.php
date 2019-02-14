@@ -1,15 +1,13 @@
 <?php
 
-    $conn = new PDO('mysql:host=localhost;dbname=projeto', 'root', '');
+    require_once("../model/Locatario.php");
 
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
 
-    $conn->exec("insert into usuario (nome, matricula, cpf, tipo) 
-                 values ('$nome', '', '$cpf', 2)");
+    $locatario = new Locatario($cpf, $nome);
 
-    $conn = null;
+    $locatario->salvaLocatario();
 
-    HEADER("LOCATION:visualizaLocatarios.php");
-
+    HEADER("LOCATION:../view/locatarios.php");
 ?>

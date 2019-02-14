@@ -1,6 +1,6 @@
 <?php
 
-    $conn = new PDO('mysql:host=localhost;dbname=projeto', 'root', '');
+    require_once("../model/Veiculo.php");
 
     $nome = $_POST['nome'];
     $marca = $_POST['marca'];
@@ -8,11 +8,9 @@
     $tipo = $_POST['tipo'];
     $potencia = $_POST['potencia'];
 
-    $conn->exec("insert into veiculo (nome, marca, modelo, tipo, potencia) 
-                 values ('$nome', '$marca', '$modelo', '$tipo', '$potencia')");
+    $veiculo = new Veiculo($nome, $marca, $modelo, $tipo, $potencia);
 
-    $conn = null;
+    $veiculo->salvaVeiculo();
 
-    HEADER("LOCATION:visualizaVeiculos.php");
-
+    HEADER("LOCATION:../view/veiculos.php");
 ?>
