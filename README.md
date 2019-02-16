@@ -2,6 +2,6 @@ The system consists of assisting car rental companies. Users of the system (of t
 
 
 Instructions:
-- create the database named 'projeto';
+- Create the database named 'projeto';
 - Import the dump.sql script to create the tables and records;
 - Add project to the HTDOCS folder of your PHP server.
